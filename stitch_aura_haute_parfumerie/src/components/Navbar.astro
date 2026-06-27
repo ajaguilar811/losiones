@@ -1,0 +1,88 @@
+---
+export interface Props {
+  transparent?: boolean;
+  links?: { label: string; href: string }[];
+}
+
+const { transparent = true, links = [] } = Astro.props;
+const defaultLinks = [
+  { label: 'Collections', href: '/collections' },
+  { label: 'La Maison', href: '#' },
+];
+const rightLinks = [
+  { label: 'Boutique', href: '#' },
+  { label: 'Contact', href: '#' },
+];
+const navLinks = links.length > 0 ? links : defaultLinks;
+const drawerLinks = [
+  { label: 'Collections', href: '/collections' },
+  { label: 'La Maison', href: '#' },
+  { label: 'Boutique', href: '#' },
+  { label: 'Contact', href: '#' },
+];
+---
+
+<nav
+  id="main-nav"
+  data-mobile-nav
+  class="fixed top-0 w-full h-[100px] z-50 bg-transparent backdrop-blur-xl border-b border-outline-variant/30 transition-all duration-500 ease-in-out"
+>
+  <div
+    class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full"
+  >
+    <div class="hidden md:flex gap-8">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 relative nav-underline"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+    <a
+      class="font-display-xl text-headline-sm tracking-widest text-primary"
+      href="/"
+    >
+      AETHERIA
+    </a>
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex gap-8">
+        {rightLinks.map((link) => (
+          <a
+            href={link.href}
+            class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 relative nav-underline"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+      <button class="touch-target hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </button>
+      <button class="hamburger md:hidden touch-target" data-toggle-mobile aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-drawer" data-mobile-drawer>
+    {drawerLinks.map((link) => (
+      <a
+        href={link.href}
+        class="font-label-caps text-lg tracking-widest text-primary hover:opacity-60 transition-opacity"
+      >
+        {link.label}
+      </a>
+    ))}
+    <hr class="border-outline-variant my-4" />
+    <a
+      href="/collections"
+      class="font-body-md text-on-surface-variant hover:text-primary transition-colors"
+    >
+      Ver todas las colecciones
+    </a>
+  </div>
+  <div class="mobile-overlay" data-mobile-overlay></div>
+</nav>

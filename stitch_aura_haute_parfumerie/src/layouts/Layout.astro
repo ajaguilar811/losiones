@@ -1,0 +1,144 @@
+---
+interface Props {
+  title: string;
+  lang?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, lang = 'es', description, ogImage } = Astro.props;
+const locale = lang === 'en' ? 'en_US' : 'es_ES';
+---
+
+<!doctype html>
+<html class="scroll-smooth" lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    {description && <meta name="description" content={description} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AETHERIA" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:locale" content={locale} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <slot />
+    <script>
+      document.addEventListener('click', function (e) {
+        var toggle = e.target.closest('[data-toggle-mobile]');
+        if (toggle) {
+          var nav = toggle.closest('[data-mobile-nav]');
+          if (!nav) return;
+          var drawer = nav.querySelector('[data-mobile-drawer]');
+          var overlay = nav.querySelector('[data-mobile-overlay]');
+          var hamburger = nav.querySelector('.hamburger');
+          var open = drawer && drawer.classList.toggle('open');
+          if (overlay) overlay.classList.toggle('open');
+          if (hamburger) hamburger.classList.toggle('open');
+          document.body.style.overflow = open ? 'hidden' : '';
+          return;
+        }
+        var overlay = e.target.closest('[data-mobile-overlay].open');
+        if (overlay) {
+          var nav = overlay.closest('[data-mobile-nav]');
+          if (nav) {
+            var drawer = nav.querySelector('[data-mobile-drawer]');
+            var hamburger = nav.querySelector('.hamburger');
+            if (drawer) drawer.classList.remove('open');
+            overlay.classList.remove('open');
+            if (hamburger) hamburger.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+          return;
+        }
+        var drawerLink = e.target.closest('[data-mobile-drawer] a');
+        if (drawerLink) {
+          var drawer = drawerLink.closest('[data-mobile-drawer]');
+          var nav = drawerLink.closest('[data-mobile-nav]');
+          if (nav) {
+            var overlay = nav.querySelector('[data-mobile-overlay]');
+            var hamburger = nav.querySelector('.hamburger');
+            if (drawer) drawer.classList.remove('open');
+            if (overlay) overlay.classList.remove('open');
+            if (hamburger) hamburger.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+
+      function reveal() {
+        var reveals = document.querySelectorAll("[data-reveal]");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal();
+
+      const nav = document.getElementById("main-nav");
+      if (nav) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 100) {
+            nav.classList.add("bg-on-background/95", "py-4");
+            nav.classList.remove("bg-transparent", "py-0");
+            nav.querySelectorAll(".nav-underline").forEach((el) =>
+              el.classList.add("text-on-primary")
+            );
+            const brand = nav.querySelector("a.font-display-xl");
+            if (brand) brand.classList.add("text-on-primary");
+          } else {
+            nav.classList.remove("bg-on-background/95", "py-4");
+            nav.classList.add("bg-transparent", "py-0");
+            nav.querySelectorAll(".nav-underline").forEach((el) =>
+              el.classList.remove("text-on-primary")
+            );
+            const brand = nav.querySelector("a.font-display-xl");
+            if (brand) brand.classList.remove("text-on-primary");
+          }
+        });
+      }
+
+      document.querySelectorAll("section").forEach((section) => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        observer.observe(section);
+      });
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </body>
+</html>

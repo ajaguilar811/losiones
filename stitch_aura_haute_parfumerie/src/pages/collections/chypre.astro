@@ -1,0 +1,282 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const products = [
+  { badge: 'EXTRAIT DE PARFUM', name: 'Silver Bergamot', price: '$240.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBoddM0pAF5zHdfcGlPQqrUy0q86lNFeqs6hBw2GmuPmV-P3eznXKX4ZKDraOB_jIQ2Nko4TJOMVrgUwTWYVuNAY4MGmCrp9_10QYRN5xFWbRqoIMkufh_Q9PlxnuqcNUTXp3QFOk7iQuMo_3aCY3dhujB_fjyrkZoqjXyQURsPmp2T8SWGOm7KIm7tZXKwPy0W7BHEOaknSLTzW6Wf5FKYubxyqETQKiYGitLa9Abri-faBqsiIt3cJ2-oaR-tCKqX2oz9XYk6LEkG' },
+  { badge: 'ARCHIVE EXCLUSIVE', name: 'Moss Ritual', price: '$310.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAnFP2nOzdi51bUDwLcimPtna1Md8yUwLX5zAznZ04Rnr4qpUVlFfBvULRiOFCyqR2JOSjD3lJd-607BxmWcy3l1P0CAGf1Pg_1T4WhJFTZlnbExSVdE-IWtCh0D7RhaThky794HibLcpcppgVlt9AT9kyFyra_IqwcybTYkFkPMhu63-aDr2pEfUfiv38g_Am99MZB5JskZip97uEUvvOvKq5JB9ZfIxVqEM-eyZdLZapsurB7PtkRyfMHvlIt5Q3TRxgRdBqDmZMU' },
+  { badge: 'EXTRAIT DE PARFUM', name: 'Velvet Patchouli', price: '$285.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDl6jcEhf4LUUKU5ifU84D85T4Ac6vJjfMeTxS5BDTKtXBep9L4vgumO4h3u7p9JlVfWRjMXo5iBnfeGTVCMDt1nI2op1VMDKG_pZsXRryZ5TUf9ij9cFCYxcFq78OKcsmB7i5pJxFbkVWPwcUqV56TKaEhSBlnTt-e7law9n2Hn_IVw7MsRc6hJJ_tFIQhd0RneXvk0UQPJroVzpszKLtSLipbN_JyCF6MjQji9Y-BXM08VI-_QU9Po3NXsS8VJ3t0xkhtwViD0lE1' },
+  { badge: 'LIMITED EDITION', name: 'Slate Citrus', price: '$265.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-e7aJ7SdvEky61kkupJhtulQPQZksWnA7RrQ1ciuT5AFf0c391mqPTutKJHh_TI89c8genYLMsn7ihjyeyOxUzW19WXMI3vyQOIkPaRv31-8TmBt-gYAFiX_X6n5XOGawNLfFvmYS0CNz5Do3lkU7uy_Q8CfbU5IAQenFjLDky35gEg5_SvcJVRacfttYFAyWDvatlm94sSNz0jdHpWhKHAOqQbxTwal07spYPzMNX9_QC6TwnngMulIj9rOCDh4kxqCjZimx3i0z' },
+  { badge: 'BESPOKE COLLECTION', name: 'Petrichor Gold', price: '$350.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDzltP4WT_6g9q5A5t9DameijAjLa0a9wwnZgOBm8GFAUI1kyk5JGa7iFhvImXQRieukmIbYmS0PxhFvj3z7zeUBrTfckPnjeiOpT1vRWVKjvLYjzv6IH0bZiwQVyjYS9UKs1RgdlTOAZmNHOPfa9iGjftjyPVCIxpapyKZDuiQJ5WezxG6kStCj6yTHf0BGUj3Q7lUs6_pQFANgo-DQt-xY67P-V3OBBnanZAr3i6MR5SkUAkM1qsgjBpCSEJ5BtTT4_Fo-z6TewR9' },
+  { badge: 'EXTRAIT DE PARFUM', name: 'Nocturnal Oak', price: '$295.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB1ZRVrWwYa_FTL0HeWhLr1GuTZqQt-JHwVyxc27LmobFeLfy9lFJo3qIDfxM9qWpwTTWvWVqbHgRtr8agqU8cXi_3CnyVQsKxIBlltPXPtHVTHVBI33DcqfotQLBku-WAG-2PN007IwYH436Ka-S9Io5ayxGS_rZSc_AFBFrcUgt2RqlA5nSTYLyfMjWzpuLmzvVGTixJP4MYVWHBAKYFXs-hY4bMFDKNbbiRwyU5o62wuckWiv06CTAaWcTP3qViETjO4HmSp_9_z' },
+];
+---
+
+<Layout title="Chypre Collection | AETHERIA" lang="en" description="Explore the AETHERIA Chypre Collection. The architectural heart of perfumery — where citrus brightness meets the dark forest-floor depth of oakmoss. Bergamot, Patchouli, and Oakmoss extraits.">
+  <!-- Navigation -->
+  <nav
+    data-mobile-nav
+    class="sticky top-0 w-full z-50 flex justify-between items-center h-[100px] px-margin-mobile md:px-margin-desktop bg-background/90 backdrop-blur-xl border-b border-outline-variant"
+  >
+    <div
+      class="font-display-xl text-headline-sm tracking-widest text-primary flex items-center"
+    >
+      <a href="/">AETHERIA</a>
+    </div>
+    <div class="hidden md:flex gap-10 items-center">
+      <a
+        class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 transition-colors duration-300"
+        href="/collections"
+      >Collections</a>
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+        href="#"
+      >Scent Notes</a>
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+        href="#"
+      >The Archive</a>
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+        href="#"
+      >Bespoke</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="touch-target hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <button class="touch-target hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </button>
+      <button class="touch-target hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">person</span>
+      </button>
+      <button class="hamburger md:hidden touch-target" data-toggle-mobile aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-drawer" data-mobile-drawer>
+    <a href="/collections" class="font-label-caps text-lg tracking-widest text-primary hover:opacity-60 transition-opacity">Collections</a>
+    <a href="#" class="font-label-caps text-lg tracking-widest text-primary hover:opacity-60 transition-opacity">Scent Notes</a>
+    <a href="#" class="font-label-caps text-lg tracking-widest text-primary hover:opacity-60 transition-opacity">The Archive</a>
+    <a href="#" class="font-label-caps text-lg tracking-widest text-primary hover:opacity-60 transition-opacity">Bespoke</a>
+    <hr class="border-outline-variant my-4" />
+    <a href="/" class="font-body-md text-on-surface-variant hover:text-primary transition-colors">Home</a>
+  </div>
+  <div class="mobile-overlay" data-mobile-overlay></div>
+  <!-- Hero -->
+  <header class="relative w-full min-h-screen md:h-[819px] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div
+        class="w-full h-full bg-cover bg-center transition-transform duration-[3000ms] hover:scale-105"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCD72KE76v-SYk1kRTZEizOvNKojYq1E7rNXyij3pWPfKcwuGehCKlnlHNCH-nO6fYMLbVIB1RR_vpSu29mYRFrbYpLZFilopXigBSZTD_9p5keIJoo7YnLoMpYgfi0C6IutttEwH42XZs3LYTmsAkSGV_QP-Q79AgZajty_gf75eW_z1xb8xPXUJsknxv7ODJGGRfJcqFnaeDhxF9YEjq6U6tOYos7yE-cFFEscDU8q_nEzmvAf5aQ4cm1k2Jv3UKfFP4jDCceUNZt')"
+      ></div>
+      <div class="absolute inset-0 bg-black/10"></div>
+    </div>
+    <div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-4xl">
+      <p
+        class="font-label-caps text-label-caps text-on-primary mb-4 tracking-[0.3em] uppercase"
+      >Category Exploration</p>
+      <h1
+        class="font-display-xl text-headline-lg md:text-display-xl text-white mb-6"
+      >
+        Chypre Collection
+      </h1>
+      <p
+        class="font-body-lg text-body-lg text-white/90 max-w-xl mb-10 leading-relaxed"
+      >
+        The architectural heart of perfumery. Defined by the sophisticated
+        tension between citrus brightness and the dark, forest-floor depth of
+        oakmoss.
+      </p>
+      <div class="flex gap-4">
+        <button
+          class="bg-white text-black px-10 py-4 font-label-caps text-label-caps hover:bg-tertiary-fixed transition-colors duration-500"
+        >Discover More</button>
+      </div>
+    </div>
+  </header>
+  <!-- Collection Description -->
+  <section
+    class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+      <div class="md:col-span-5" data-reveal>
+        <span
+          class="font-label-caps text-label-caps text-on-surface-variant border-b border-tertiary-fixed-dim pb-1 mb-8 inline-block"
+        >THE NOTES</span>
+        <h2 class="font-headline-md text-headline-md mb-8">
+          The tripartite structure of the earth.
+        </h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-12 leading-relaxed">
+          Aetheria's Chypre scents are a study in artisanal contrast. We source
+          our oakmoss from the deep forests of central Europe, pairing it with
+          bergamot from the first pressing in Calabria. This collection represents
+          the 'Gilded Earth'—fragrances that feel as structured as a tailored
+          coat and as organic as the roots of a cedar tree.
+        </p>
+        <div class="flex flex-col gap-6">
+          <div
+            class="flex justify-between items-end border-b border-outline-variant pb-2 group cursor-pointer"
+          >
+            <span
+              class="font-label-caps text-label-caps group-hover:text-tertiary-fixed-dim transition-colors"
+            >Bergamot</span>
+            <span class="font-caption text-caption text-on-surface-variant"
+            >Calabria</span>
+          </div>
+          <div
+            class="flex justify-between items-end border-b border-outline-variant pb-2 group cursor-pointer"
+          >
+            <span
+              class="font-label-caps text-label-caps group-hover:text-tertiary-fixed-dim transition-colors"
+            >Oakmoss</span>
+            <span class="font-caption text-caption text-on-surface-variant"
+            >Auvergne</span>
+          </div>
+          <div
+            class="flex justify-between items-end border-b border-outline-variant pb-2 group cursor-pointer"
+          >
+            <span
+              class="font-label-caps text-label-caps group-hover:text-tertiary-fixed-dim transition-colors"
+            >Patchouli</span>
+            <span class="font-caption text-caption text-on-surface-variant"
+            >Sumatra</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="md:col-start-7 md:col-span-6 relative aspect-[4/5]"
+        data-reveal
+        style="transition-delay: 200ms;"
+      >
+        <div
+          class="w-full h-full bg-cover bg-center shadow-2xl"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjbWvAKhvKDu4PY_c8UFuSqbNclqChb3HfQGB4EK3hvWRrnrUQ3092xV17UK79Fv-ZLO8Xxh7er4NDw17C4sHYNEyfEfJx7Rdap3dgSTZENMWn5lJUH-3jswQymZm2NH_lDY6sAwUCzaUPx0ik5R2s7mmSnrcgrLf-8TRWqDj5xOfR2GYqVrnLILPox3laf66yuB8iJ8ZlSZQiPuB_ng8TjOlSvSrp3IdAa9orDIR1jB6oRotcp2hLcGsF0xsP3P23rSfxg4OP2C_4')"
+        ></div>
+        <div
+          class="absolute -bottom-10 -left-10 w-48 h-48 bg-surface-container-high hidden md:block -z-10 border border-outline-variant"
+        ></div>
+      </div>
+    </div>
+  </section>
+  <!-- Product Grid -->
+  <section
+    class="pb-section-gap px-margin-mobile md:px-margin-desktop bg-background"
+  >
+    <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+      <div>
+        <h3 class="font-headline-md text-headline-md">Selected Extraits</h3>
+        <p class="font-label-caps text-label-caps text-on-surface-variant mt-2">
+          6 ARCHIVAL FORMULATIONS
+        </p>
+      </div>
+      <div class="flex gap-4 mt-6 md:mt-0">
+        <button class="font-label-caps text-label-caps border-b border-primary"
+        >Filter</button>
+        <button class="font-label-caps text-label-caps text-on-surface-variant"
+        >Sort By</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-16">
+      {products.map((product) => (
+        <div class="group" data-reveal>
+          <div
+            class="aspect-[1/1] bg-surface-container overflow-hidden mb-6 relative"
+          >
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src={product.img}
+              alt={product.name}
+            />
+            <div
+              class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <button
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-6 py-3 font-label-caps text-[10px] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 max-md:opacity-100 max-md:translate-y-0"
+            >
+              QUICK ADD
+            </button>
+          </div>
+          <div class="text-center">
+            <p
+              class="font-label-caps text-[10px] text-on-surface-variant mb-1 tracking-widest"
+            >
+              {product.badge}
+            </p>
+            <h4 class="font-headline-sm text-headline-sm mb-2">
+              {product.name}
+            </h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              {product.price}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  <!-- Bespoke CTA -->
+  <section
+    class="py-section-gap px-margin-mobile md:px-margin-desktop bg-inverse-surface text-inverse-on-surface"
+  >
+    <div class="max-w-4xl mx-auto text-center" data-reveal>
+      <h2 class="font-display-xl text-headline-lg md:text-headline-lg mb-8">
+        The Alchemy of Self
+      </h2>
+      <p
+        class="font-body-lg text-body-lg text-inverse-on-surface/80 mb-12"
+      >
+        Chypre is a personal dialogue. If our curated archival scents do not
+        speak to your soul, our Master Perfumer is available for bespoke
+        formulation.
+      </p>
+      <button
+        class="bg-white text-black px-12 py-5 font-label-caps text-label-caps hover:bg-tertiary-fixed transition-all duration-500"
+      >
+        BOOK A CONSULTATION
+      </button>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer
+    class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-background border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-12"
+  >
+    <div class="flex flex-col items-center md:items-start">
+      <div
+        class="font-display-xl text-headline-sm tracking-widest text-primary mb-4"
+      >
+        AETHERIA
+      </div>
+      <p class="font-label-caps text-[10px] text-on-surface-variant">
+        THE ARCHITECTS OF OLFACTION
+      </p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-10">
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+        href="#"
+      >Privacy</a>
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+        href="#"
+      >Terms</a>
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+        href="#"
+      >Shipping</a>
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+        href="#"
+      >Contact</a>
+    </div>
+    <div class="text-right">
+      <p
+        class="font-label-caps text-[10px] text-on-surface-variant tracking-widest"
+      >
+        © 2024 AETHERIA. ALL RIGHTS RESERVED.
+      </p>
+    </div>
+  </footer>
+</Layout>

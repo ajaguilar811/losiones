@@ -1,0 +1,233 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="AETHERIA | Alta Perfumería" description="AETHERIA — Alta perfumería invisible. Fragancias de edición limitada con ingredientes exóticos como Oud de Laos y Rosa Damascena. Descubra el arte de la perfumería de lujo.">
+  <Navbar />
+  <!-- Hero Section -->
+  <header
+    class="relative h-screen w-full flex items-center justify-center overflow-hidden"
+  >
+    <div class="absolute inset-0 z-0">
+      <img
+        class="w-full h-full object-cover"
+        alt="A moody, high-contrast black and white cinematic photograph of a master perfumer in his laboratory."
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkrLaBTHxO8FZIrgjblZZ0ipte6wb63g6tzQVhR6KwVT_CVS5oEGciQHGPXGEhy5_3cE2_n_aQD836z4-NvSeQGyriZgwyd8vRzF0-4fjMpdpZ7MENCcNPEMIa3YDXKsxfcn5PEOpUYzcDntzxOe6EzlT2ntDKYvJ-Ezdm7x1R8soAZuOaf6SOPVqVYpWj_cjZh63AeoV7xXb-RCJkI5cWu6kDsW6IVdlSUX0HD8zuxjSLZPnypwUgC6ikgBMh629paQHGNnOpwY0l"
+      />
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="relative z-10 text-center px-margin-mobile max-w-4xl">
+      <h1
+        class="font-headline-lg text-headline-lg text-white mb-8 reveal"
+        data-reveal
+      >
+        El arte de la alta perfumería invisible.
+      </h1>
+      <div data-reveal style="transition-delay: 200ms;">
+        <a
+          class="inline-block px-10 py-4 border border-white text-white font-label-caps text-label-caps tracking-widest btn-gold-hover uppercase"
+          href="#collection"
+        >
+          Descubrir la Colección
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- Philosophy Section -->
+  <section class="py-section-gap bg-background overflow-hidden">
+    <div class="max-w-3xl mx-auto px-margin-mobile text-center">
+      <span
+        class="font-label-caps text-label-caps text-gold-accent tracking-[0.3em] mb-6 block"
+        data-reveal
+      >L'ESSENCE DE L'ÂME</span
+      >
+      <h2 class="font-headline-lg text-headline-lg mb-10" data-reveal>
+        Fragancias que narran historias sin palabras.
+      </h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant" data-reveal>
+        Nuestras creaciones son el resultado de una búsqueda obsesiva por la
+        pureza. Cada gota contiene ingredientes exóticos recolectados éticamente,
+        desde el Oud más profundo de Laos hasta la Rosa Damascena recogida al
+        amanecer. Una arquitectura olfativa diseñada para aquellos que encuentran
+        la distinción en lo imperceptible.
+      </p>
+    </div>
+  </section>
+  <!-- Featured Collection -->
+  <section
+    class="pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
+    id="collection"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+      <div class="md:col-span-7 group" data-reveal>
+        <div class="relative aspect-[4/5] overflow-hidden mb-6">
+          <img
+            class="w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-0"
+            alt="Aura Noire perfume bottle on dark wood with black silk petals."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy_lbXMs686FBLHH9zhwklfasW5UD2mc3U4LD77CWYpE7EOKB05QmsQaUk0mzmMPCZHoM2keIlGIusZX0e5NzxuLNqa7_2Tjyxn5R9tMwxwna1Va7vPhF2txQ6YnJomINq1tBAO0-ZyVnwz8A-BReluaXXvwf5KHkcrk2oOZhm7Cnct6mIIX-s9SgmgdIUwmcPu8me35Ep6g3t_TqCCtvjVNW24GOrZiaTuMfJRChSCPSUNkKf0VvuFyYC4FR5Uh2AlLOr_4yA8e6Z"
+          />
+          <img
+            class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+            alt="Raw perfume ingredients: rose petals, sandalwood, amber resin."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuArKIEFNDMil66GZTHAUoXKqqJ3zopZIY1oufheHRglr14s0u2cWS6UAzANgnidMB9kU0cCG7cVJ5xboAI2aLXp44YiFSZKJ3oFVWcbuzOcWPwNJPWbuCUAwYtUgs41SF2wMDT-woyGWZCvj8mF3VrFXb34wYdAj0J1x7j5aa7uPuAQmPvu1EvHlOkRklWVuGLHX3jKsmqnFxOngNP1Tc2EeThDXBEpjfp6Pt6FvChIPBv1vEW7tZU76RmxDWpSadrTtIvd9YED65Vr"
+          />
+        </div>
+        <div class="flex justify-between items-end border-b border-outline-variant pb-4">
+          <div>
+            <h3 class="font-headline-sm text-headline-sm uppercase tracking-wider">
+              AURA NOIRE
+            </h3>
+            <p class="font-label-caps text-label-caps text-on-surface-variant mt-1">
+              Amaderado Especiado
+            </p>
+          </div>
+          <span class="font-headline-sm text-headline-sm">$280</span>
+        </div>
+      </div>
+      <div class="md:col-span-5 flex flex-col gap-section-gap md:pt-40">
+        <div class="group" data-reveal style="transition-delay: 150ms;">
+          <div
+            class="relative aspect-[1/1] bg-surface-container mb-6 flex items-center justify-center p-12"
+          >
+            <img
+              class="w-2/3 h-auto object-contain drop-shadow-2xl"
+              alt="Santal D'Or perfume bottle on white marble."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq5KDRoOGopg7a9k7yrjEpqTDnjD4hFMBmqj8oNonNl4myV2mALOv3HVq5wYIJkIgslAJBN2wzvUUrutSG4crBd_agi2zUIuJdMyozlNRqf-i6SxaFG59d4wpAX790Ls670gldN6jjtwG64GRaUJf4qi93SNYDjA_wfYURz6bfQaPunhQ9lSF8WFwo43efpzNaInioE91ITN7KoN5EElp2cojAtU4RU0amKveEaSdIhhqoXaULxzxCLHDGMfKEl2sIzkNcOBp0f-7M"
+            />
+          </div>
+          <div class="flex justify-between items-end border-b border-outline-variant pb-4">
+            <div>
+              <h3 class="font-headline-sm text-headline-sm uppercase tracking-wider">
+                SANTAL D'OR
+              </h3>
+              <p class="font-label-caps text-label-caps text-on-surface-variant mt-1">
+                Amaderado
+              </p>
+            </div>
+            <span class="font-headline-sm text-headline-sm">$260</span>
+          </div>
+        </div>
+        <div class="group" data-reveal style="transition-delay: 300ms;">
+          <div
+            class="relative aspect-[1/1] bg-surface-container-low mb-6 flex items-center justify-center p-12"
+          >
+            <img
+              class="w-2/3 h-auto object-contain drop-shadow-lg"
+              alt="Rose Éthérée perfume bottle with soft pink tint."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG5ru2p-V5Mq09D7eeGjrO5v4aR1SCkoSK1hWBw2sk9I77-wvMC74KTgTFHPO-k8Mq78jSpkDWsPnNyCFb4ZLgtScjv51PfTGkkgvCu9hd5UFPWGWnXcG5lXcNZAcA6DgBMirqxjfNVbFKPrFjFA3MyBcOwZeQu5vi4D0d4jEuQUUVeIPhxVdoIMnAIDRCVGFytdroOocxuUXNCjKnAP2xx3sTVFU46yZvZlQZqprSa3Qxd_tAg1mAnRzEmy_28-Ew-y9n3PR1nmTb"
+            />
+          </div>
+          <div class="flex justify-between items-end border-b border-outline-variant pb-4">
+            <div>
+              <h3 class="font-headline-sm text-headline-sm uppercase tracking-wider">
+                ROSE ÉTHÉRÉE
+              </h3>
+              <p class="font-label-caps text-label-caps text-on-surface-variant mt-1">
+                Floral Oriental
+              </p>
+            </div>
+            <span class="font-headline-sm text-headline-sm">$290</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Sensory Experience -->
+  <section class="bg-surface-container py-section-gap overflow-hidden">
+    <div
+      class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+        <div class="order-2 lg:order-1" data-reveal>
+          <img
+            class="w-full aspect-square object-cover shadow-2xl"
+            alt="Oriental fragrance ingredients: spices, vanilla pods, resins."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAruypJeevE8qcVJt7iZYfys2tkVNCJyiHYh85TLleYYZqruxN-VPd4Yu9-04VxWbLTAh1H_95PFTDsWwnxY_qn0qo7rz7P8bGiNAR7Ov5OE0ePqRHRniEDo8ztIyfd8PcsCcR-J7yqawT9bln_dL-FXfdC6VNcpAKwB7nZO78d0W28P4xwXJ8Fbbj4JCjf_Ovwjeuw5_qrE4hnH-dLfKIEz2sZ-nN6k3y_WEF2CUNoJCVd2WFwS1Bbc0bRF8XEH60GIoZOPFfaNKMY"
+          />
+        </div>
+        <div class="order-1 lg:order-2 lg:pl-16">
+          <span
+            class="font-label-caps text-label-caps text-gold-accent tracking-[0.3em] mb-6 block"
+            data-reveal
+          >EXPERIENCIA SENSORIAL</span
+          >
+          <h2 class="font-headline-lg text-headline-lg mb-8" data-reveal>
+            Defina su identidad olfativa.
+          </h2>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-12" data-reveal>
+            Explore nuestras familias principales y descubra la esencia que
+            resuena con su narrativa personal.
+          </p>
+          <div class="grid grid-cols-2 gap-4" data-reveal>
+            <button
+              class="p-6 border border-outline hover:border-gold-accent transition-all text-left group"
+            >
+              <span
+                class="material-symbols-outlined mb-4 text-3xl group-hover:text-gold-accent transition-colors"
+              >eco</span>
+              <h4 class="font-label-caps text-label-caps tracking-widest">
+                CITRUS
+              </h4>
+            </button>
+            <button
+              class="p-6 border border-outline hover:border-gold-accent transition-all text-left group"
+            >
+              <span
+                class="material-symbols-outlined mb-4 text-3xl group-hover:text-gold-accent transition-colors"
+              >local_florist</span>
+              <h4 class="font-label-caps text-label-caps tracking-widest">
+                FLORAL
+              </h4>
+            </button>
+            <button
+              class="p-6 border border-outline hover:border-gold-accent transition-all text-left group"
+            >
+              <span
+                class="material-symbols-outlined mb-4 text-3xl group-hover:text-gold-accent transition-colors"
+              >auto_awesome</span>
+              <h4 class="font-label-caps text-label-caps tracking-widest">
+                ORIENTAL
+              </h4>
+            </button>
+            <button
+              class="p-6 border border-outline hover:border-gold-accent transition-all text-left group"
+            >
+              <span
+                class="material-symbols-outlined mb-4 text-3xl group-hover:text-gold-accent transition-colors"
+              >forest</span>
+              <h4 class="font-label-caps text-label-caps tracking-widest">
+                WOODY
+              </h4>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Reviews Section -->
+  <section
+    class="py-section-gap bg-background border-y border-outline-variant/30"
+  >
+    <div class="max-w-4xl mx-auto px-margin-mobile text-center">
+      <div data-reveal>
+        <span
+          class="material-symbols-outlined text-4xl text-gold-accent mb-8"
+        >format_quote</span
+        >
+        <blockquote class="font-headline-md text-headline-md italic mb-6">
+          "Una obra maestra embotellada. AETHERIA no solo crea perfumes, captura
+          momentos efímeros y los hace eternos a través del sentido más
+          primitivo."
+        </blockquote>
+        <cite
+          class="font-label-caps text-label-caps tracking-[0.2em] uppercase not-italic text-on-surface-variant"
+        >
+          — VOGUE
+        </cite>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>

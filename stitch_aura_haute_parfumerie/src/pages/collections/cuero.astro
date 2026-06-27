@@ -1,0 +1,280 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const products = [
+  { badge: 'EXTRAIT DE PARFUM', name: 'Midnight Rose', price: '$240.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6C2WL8fm1ct-voC7wGvrZX-cNgcVzjhgiGoAH3fBbDfZFHKUw9NqVD16hth2u1MXXNGdMeCHvPifwg1hZDN-f2IdRhk_j5WKn4Mgc2auxpGgW5RQREk96ncu-HynQgW4Ig7pm5C9d_uZMTV46Pt1ao3p8wwh0Oro_mKMI71NClBehfhHT8h02aNoxytbSQOaZYkss-RzrMx5N2nI3IwBYiCxOED-DVZA8LHHMSKlPaP4Y6wZ70r5-K6uPeOX4Rjqr1YpqM6XV6JQC' },
+  { badge: 'LIMITED EDITION', name: 'Smoked Oud', price: '$310.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_h1WT8xWT-TpjxSDS0GtCUMQeXasp-PDNUS8KcMtkrZw-ne80TFq_aZoTFvKGibvmetO5b_1APOP0AZ6AfsWN5Xlh99zEJbvmRd9_ahzuHQRd-1aAbV8mzDIS9TLpa_b0Y7H_fZwN2atx1fyk7oWixkjepEq8Pzgx3tSCrOzvCrAMQ-4Ru0mePCIOK02BwS6X3W53I_6CMlGcaKzFrfhvrn_oCxHQuKUC3hQfp27UIJlvXBbReam-e7bQnfz9jgVG33t_GZ_lTAV5' },
+  { badge: 'SIGNATURE SCENT', name: 'Black Birch', price: '$195.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCZYEZcXGzpk7QQNXHVAFbX09uiUd-mRG88AW6mDkCNtnxiR7sq5akTadvY3muJ4KwCxISNsCwqO24m4T0HiBgvsRVh2Pi-qgMG1B2RO0CYIASQhK5ox8opVBYIQpgmOwdrMvvJXose_EwYreMaEc9PdykdmKSpgybKgCV3lnxSmATTyksV_63O5q8ex8NHsHeoGUwHL9zliyMHAywiv3ZBI5f2hEFMeOGyYJHnP8PCGncT4V6tpY1hDsIb1IcsuzCaA1JtG0UJBozc' },
+  { badge: 'COLLECTOR PIECE', name: 'Tobacco Leaf', price: '$285.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAacyoRw_YaNt37S7usSHSshJsNup-E6NjMXw0MEEC5sI2mVNbrQaMGleDPexOvvxMhpuEspu7tZO7X1P4TRvKMDAnz6Jg2a_qqlEvdgIt21AFw9a_ZlKaEakBYHmDaSVm2TUgeB4ApKQMpNRbaUab5WXLfWnVGo0Vxjf4xjzbh47xvm427jvQfkPLtFj0ATt0hmPysC7bCvXcb1MaBJEV8f6qCRAayNAClPSCiVX0eTaaiamDkQU9C7SHhoTVrTzxqv0pe6t43II2X' },
+  { badge: 'EAU DE PARFUM', name: 'Dusk Suede', price: '$220.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhCUbUYwSpGSKj1tkIOKpqgq7JyJ-6jSmcqKv7_vGlsQn_Tu47-rt10BsUcH9xiVcCNuOnScJJ2SrsL3XM09SSTWXxgnxrkwA83tjb_kpCf2zVJ5EhwVrg3Qp-j1l5PzxBK8k5OPWRqkNp3KIQuo_xHaD4CXyr9z3H4flamzFIrflXCN0f3RhftmCV4RBrvmM5tL8myDVXq6j6nQtUEFP3l-grEP_8iDf_XuSwSaNTDwpWHlcxub9VuqwCIZsa1u3RR1fZRLmh4Fiv' },
+  { badge: 'INTENSE NOIR', name: 'Tar & Embers', price: '$350.00', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAjHwnfE-upqjbwfLfhQGbztxwzEU9BeQJx81AAPPIkN6rJWz0P-_jIuIns8U_fscJu67nLIDCFujsKu7R6_4F8WVbi24_fkElFMNzOKWpKmHWN31EcUOIFU7L15gs2Lhhl-IfQKuz1GGlzga3LbWICzzyODXPpkHgoV2fOBBBhR6UwzuTSjW1RWfAutUgFTTd-NO_wbiBClz5trwsLPnu1OELEytt6y3WuZWq-UDu67iJF16QeLefEGx0nBaRm-96crzrxK-JC8LvA' },
+];
+---
+
+<Layout title="AETHERIA | Leather Collection" lang="en" description="Discover the AETHERIA Leather Collection. An exploration of primal elegance — birch tar, smoked oud, tobacco, and suede reimagined through high-luxury minimalism.">
+  <!-- Top Navigation Bar -->
+  <header
+    data-mobile-nav
+    class="sticky top-0 w-full z-50 flex justify-between items-center h-[100px] px-margin-mobile md:px-margin-desktop bg-background/90 backdrop-blur-xl border-b border-outline-variant"
+  >
+    <div class="flex-1 flex items-center gap-8">
+      <a
+        class="font-display-xl text-headline-md tracking-widest text-primary"
+        href="/"
+      >AETHERIA</a>
+      <nav class="hidden md:flex items-center gap-10">
+        <a
+          class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 transition-colors duration-300"
+          href="/collections"
+        >Collections</a
+        >
+        <a
+          class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+          href="#"
+        >Scent Notes</a
+        >
+        <a
+          class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+          href="#"
+        >The Archive</a
+        >
+        <a
+          class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+          href="#"
+        >Bespoke</a
+        >
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="touch-target hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <button class="touch-target hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </button>
+      <button class="touch-target hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined">person</span>
+      </button>
+      <button class="hamburger md:hidden touch-target" data-toggle-mobile aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-drawer" data-mobile-drawer>
+    <a href="/collections" class="font-label-caps text-lg tracking-widest text-primary hover:opacity-60 transition-opacity">Collections</a>
+    <a href="#" class="font-label-caps text-lg tracking-widest text-primary hover:opacity-60 transition-opacity">Scent Notes</a>
+    <a href="#" class="font-label-caps text-lg tracking-widest text-primary hover:opacity-60 transition-opacity">The Archive</a>
+    <a href="#" class="font-label-caps text-lg tracking-widest text-primary hover:opacity-60 transition-opacity">Bespoke</a>
+    <hr class="border-outline-variant my-4" />
+    <a href="/" class="font-body-md text-on-surface-variant hover:text-primary transition-colors">Home</a>
+  </div>
+  <div class="mobile-overlay" data-mobile-overlay></div>
+  <main class="min-h-screen">
+    <!-- Hero -->
+    <section
+      class="relative w-full min-h-screen md:h-[870px] flex items-center px-margin-mobile md:px-margin-desktop overflow-hidden"
+    >
+      <div
+        class="z-10 w-full grid grid-cols-12 gap-gutter items-center"
+      >
+        <div class="col-span-12 md:col-span-5 flex flex-col items-start fade-in">
+          <span
+            class="font-label-caps text-label-caps text-on-surface-variant mb-4"
+          >THE OLFACTORY EDIT</span>
+          <h1 class="font-headline-lg text-headline-lg mb-6 leading-tight">
+            Leather Collection
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-10"
+          >
+            An exploration of primal elegance. Raw textures of birch tar, smoky
+            tobacco, and the intimate softness of suede reimagined through a lens
+            of high-luxury minimalism.
+          </p>
+          <button
+            class="px-10 py-4 bg-primary text-on-primary font-label-caps text-label-caps tracking-widest hover:bg-surface-tint transition-all duration-500"
+          >
+            DISCOVER THE RANGE
+          </button>
+        </div>
+        <div class="hidden md:flex col-span-7 justify-end relative h-full">
+          <div class="w-[85%] h-[90%] bg-surface-container overflow-hidden group">
+            <div
+              class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWKc3KIYmMDV8BQuBOBnvv2ijheWzynNdvsriaakKWiJcKDgVV06qD3T4nKhtr2v7iJDLv3Z5DfNR-2xyd9N4HoVb273TzH8zcxi9JLPjF3h6PaynMU6SqHTlcVhF7e0o-AkX3ShHaxEFrqK6Bxn5h7zNQI_VoYWiEujnEs4tAIafjFQ81a2Oa26RLQtWXtTwJOf0YLqPkpZ_MgyIzs7bbk9Ou26_ciFRLsUtl3rQHGaLAS4QKdV_Y0YSN4fdbKPVzWt8RrEHN4M_7')"
+            ></div>
+          </div>
+          <div
+            class="absolute -left-12 bottom-12 flex flex-col items-center gap-6"
+          >
+            <span
+              class="text-vertical font-label-caps text-label-caps tracking-widest text-on-surface-variant"
+            >SEASON 01 / CUERO</span>
+            <div class="w-px h-24 bg-outline-variant"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Signature Notes -->
+    <section
+      class="py-section-gap px-margin-mobile md:px-margin-desktop border-y border-outline-variant/30"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+        <div class="flex flex-col gap-2">
+          <span class="font-label-caps text-label-caps text-on-surface-variant"
+          >PRIMARY NOTE</span>
+          <h3 class="font-headline-sm text-headline-sm">Birch Tar</h3>
+          <p class="font-caption text-caption text-on-surface-variant">
+            The smoky heart of the leather accord.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="font-label-caps text-label-caps text-on-surface-variant"
+          >TEXTURE</span>
+          <h3 class="font-headline-sm text-headline-sm">Smoked Oud</h3>
+          <p class="font-caption text-caption text-on-surface-variant">
+            Adding depth and resinous complexity.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="font-label-caps text-label-caps text-on-surface-variant"
+          >FINISH</span>
+          <h3 class="font-headline-sm text-headline-sm">Suede</h3>
+          <p class="font-caption text-caption text-on-surface-variant">
+            A velvety, skin-like lingering scent.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="font-label-caps text-label-caps text-on-surface-variant"
+          >INTENSITY</span>
+          <h3 class="font-headline-sm text-headline-sm">Tobacco</h3>
+          <p class="font-caption text-caption text-on-surface-variant">
+            Sweet, earthy, and unapologetically bold.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Product Grid -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+      <div class="flex justify-between items-end mb-20">
+        <h2 class="font-headline-md text-headline-md">The Archive</h2>
+        <div class="flex gap-4">
+          <button
+            class="font-label-caps text-label-caps border border-outline px-6 py-2 hover:bg-primary hover:text-on-primary transition-all"
+          >FILTER</button>
+          <button
+            class="font-label-caps text-label-caps border border-outline px-6 py-2 hover:bg-primary hover:text-on-primary transition-all"
+          >SORT BY</button>
+        </div>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-16 md:gap-y-section-gap"
+      >
+        {products.map((product) => (
+          <div class="group cursor-pointer">
+            <div
+              class="aspect-[4/5] bg-surface-container overflow-hidden mb-8 relative"
+            >
+              <div
+                class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div
+                class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style={`background-image: url('${product.img}')`}
+              ></div>
+            </div>
+            <div class="text-center flex flex-col gap-2">
+              <span
+                class="font-label-caps text-label-caps text-on-surface-variant"
+              >{product.badge}</span>
+              <h3
+                class="font-headline-sm text-headline-sm uppercase tracking-widest"
+              >
+                {product.name}
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                {product.price}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    <!-- Newsletter -->
+    <section
+      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low text-center"
+    >
+      <div class="max-w-2xl mx-auto flex flex-col items-center">
+        <span
+          class="font-label-caps text-label-caps text-on-surface-variant mb-6"
+        >EXCLUSIVE ACCESS</span>
+        <h2 class="font-headline-md text-headline-md mb-8">
+          Join The Archive
+        </h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-10">
+          Receive invitations to private collection launches and bespoke scent
+          consultations.
+        </p>
+        <div class="w-full flex border-b border-primary max-w-md">
+          <input
+            class="flex-1 bg-transparent border-none py-3 font-label-caps text-label-caps focus:ring-0 placeholder:text-on-surface-variant/50"
+            placeholder="EMAIL ADDRESS"
+            type="email"
+          />
+          <button
+            class="px-6 py-3 font-label-caps text-label-caps tracking-widest"
+          >
+            SUBSCRIBE
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer
+    class="w-full py-section-gap px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-unit border-t border-outline-variant"
+  >
+    <div class="flex flex-col items-center md:items-start gap-4">
+      <span
+        class="font-display-xl text-headline-sm tracking-widest text-primary"
+      >AETHERIA</span>
+      <p class="font-label-caps text-label-caps text-on-surface-variant">
+        © 2024 AETHERIA. ALL RIGHTS RESERVED.
+      </p>
+    </div>
+    <div class="flex gap-10 mt-8 md:mt-0">
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+        href="#"
+      >Privacy</a>
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+        href="#"
+      >Terms</a>
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+        href="#"
+      >Shipping</a>
+      <a
+        class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+        href="#"
+      >Contact</a>
+    </div>
+    <div class="flex gap-6 mt-8 md:mt-0">
+      <a
+        class="w-10 h-10 border border-outline-variant rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300"
+        href="#"
+      >
+        <span class="material-symbols-outlined !text-[18px]">share</span>
+      </a>
+      <a
+        class="w-10 h-10 border border-outline-variant rounded-full flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300"
+        href="#"
+      >
+        <span class="material-symbols-outlined !text-[18px]">mail</span>
+      </a>
+    </div>
+  </footer>
+</Layout>

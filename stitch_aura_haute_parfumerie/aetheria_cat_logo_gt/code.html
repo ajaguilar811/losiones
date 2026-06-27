@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Colecciones | AETHERIA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1b1c1c",
+                    "surface-dim": "#dbdad9",
+                    "on-tertiary-container": "#a08000",
+                    "outline-variant": "#c4c7c7",
+                    "secondary-fixed-dim": "#c7c7c3",
+                    "on-secondary-fixed": "#1b1c1a",
+                    "surface-container-low": "#f5f3f3",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#474646",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "tertiary": "#000000",
+                    "primary": "#000000",
+                    "surface-bright": "#fbf9f8",
+                    "on-surface-variant": "#444748",
+                    "on-secondary-container": "#626360",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "secondary": "#5e5f5c",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e4e2e2",
+                    "secondary-container": "#e0e0dc",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-primary-fixed": "#1c1b1b",
+                    "background": "#fbf9f8",
+                    "surface-container-highest": "#e4e2e2",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-secondary-fixed-variant": "#464744",
+                    "on-error-container": "#93000a",
+                    "outline": "#747878",
+                    "primary-container": "#1c1b1b",
+                    "on-primary-container": "#858383",
+                    "tertiary-fixed": "#ffe088",
+                    "secondary-fixed": "#e3e2df",
+                    "inverse-surface": "#303031",
+                    "on-background": "#1b1c1c",
+                    "tertiary-container": "#241a00",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#efeded",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#c9c6c5",
+                    "inverse-on-surface": "#f2f0f0",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e9e8e7",
+                    "surface-tint": "#5f5e5e",
+                    "surface": "#fbf9f8",
+                    "primary-fixed": "#e5e2e1",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "24px",
+                    "container-max": "1440px",
+                    "gutter": "32px",
+                    "section-gap": "160px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Playfair Display"],
+                    "label-caps": ["Montserrat"],
+                    "headline-sm": ["Playfair Display"],
+                    "caption": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Montserrat"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "caption": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .scent-line {
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scent-link:hover .scent-line {
+            width: 100%;
+        }
+        .filter-item-active {
+            font-weight: 700;
+            color: #000000;
+            border-bottom: 2px solid #000000;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center h-[100px] px-margin-mobile md:px-margin-desktop bg-background/90 backdrop-blur-xl border-b border-outline-variant">
+<div class="flex items-center gap-12">
+<h1 class="font-display-xl text-headline-md tracking-widest text-primary">AETHERIA</h1>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 transition-colors duration-300" href="#">Colecciones</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Notas de Aroma</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">El Archivo</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">A Medida</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center border-b border-outline py-1 px-2 gap-2">
+<span class="material-symbols-outlined text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-[10px] font-label-caps tracking-widest p-0 w-32" placeholder="BUSCAR AROMAS" type="text"/>
+</div>
+<button class="material-symbols-outlined text-2xl hover:opacity-70 transition-opacity">person</button>
+<button class="material-symbols-outlined text-2xl hover:opacity-70 transition-opacity">shopping_bag</button>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Catalog Header -->
+<section class="pt-24 pb-12 px-margin-mobile md:px-margin-desktop text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg mb-4">La Colección</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Descubra nuestro archivo curado de obras maestras olfativas. Cada fragancia es una narrativa contada a través de los botánicos más preciosos y resinas raras del mundo.
+        </p>
+</section>
+<!-- Filter Bar -->
+<section class="sticky top-[100px] bg-background z-40 border-y border-outline-variant px-margin-mobile md:px-margin-desktop py-6">
+<div class="flex items-center justify-between overflow-x-auto no-scrollbar gap-8">
+<div class="flex gap-10 items-center whitespace-nowrap">
+<button class="font-label-caps text-label-caps border-b-2 border-primary pb-1">Todo</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Floral</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Amaderado</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Oriental</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">Cítrico</button>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Ordenar por:</span>
+<button class="font-label-caps text-label-caps flex items-center gap-1">Más nuevo <span class="material-symbols-outlined text-sm">expand_more</span></button>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="py-16 px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-gutter gap-y-16">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low relative overflow-hidden mb-6 flex items-center justify-center p-8">
+<img alt="Aurum &amp; Co. № 1" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfdG7LUc_Ps-ZDC12HtiQhmrX_KInmcRbNsgtROXA_UzU2f0MgBqnza7OzDnjQIDj_eDnD0RarrrV_MMFxbj336hwNRF4eobARLI54DLxea8hHeraDYjQc_qxIfQDp2CTmYDCI6KheJ4-_eiE72L6wwfdffWPiQ8zTyjk-D0UJ_ZOzJyae1qwwIPiZwCzNECpIwnN-vkXytRUym7_srZSGNzj2IazeUvxS5se4Febw2RSe1FNVm9gCex10uHctgXRnGAfzWM-LceOk"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] py-3 px-8 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">AÑADIR RÁPIDO</button>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-[10px] tracking-widest text-on-surface-variant mb-1 uppercase">Cítrico Amaderado</p>
+<h3 class="font-headline-sm text-headline-sm mb-2 group-hover:italic transition-all">AURUM &amp; CO. - № 1</h3>
+<p class="font-body-md text-body-md text-primary">$280</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low relative overflow-hidden mb-6 flex items-center justify-center p-8">
+<img alt="Esencia Noir" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-e3BYcmJYfntBFiadXBNfA1EEv_ubdl1hYkd_C4mgn_ormE7PKWYLDsEzJ4Wzg-5w4eF7ND2fHcwE54MW2NNq6q79vGcd2Q4GW9M5A4prNVWmr2U1feDUKwijnPu9jGC6J5vjjSYM2c2FHCpOnzgrcuBb2q8R5FGL5UbrNSB-TYa_Ixno3QfigOAYg42psWwTvwwxVPQQXAi3txQL0QvZoZzd5JlQ8Ige30xPUH823ekHD_Xwbsl3MpdUeA4kvC5POjGvSXztHb-G"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] py-3 px-8 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">AÑADIR RÁPIDO</button>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-[10px] tracking-widest text-on-surface-variant mb-1 uppercase">Amaderado Especiado</p>
+<h3 class="font-headline-sm text-headline-sm mb-2 group-hover:italic transition-all">ESENCIA NOIR</h3>
+<p class="font-body-md text-body-md text-primary">$320</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low relative overflow-hidden mb-6 flex items-center justify-center p-8">
+<img alt="Oud Terciopelo" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsfN3MPfdKy5xWrpuekqeijopoRRgldimN_8KMVYDixq_be-6JCJ3OBZ6KGc_7iT0UHhtG2nT5yBZ23JLa4hESNjB7SIlspBp86kwdXG_gKvFqKUQu2Cmm_qK6fAgCVmx0XsCnovRXp-ZXDrjAZVEhktUCIeu0TAiw9M2se_iQYGvx00OXIx_9bwynbf62ln0jdcRZTyYea6knLG-Dd9L2nJXZxvSivYlgfpqP0Iq0pfLLFZqYkrd3GrAs7Miw5mO1kFrlWEbvfAD5"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] py-3 px-8 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">AÑADIR RÁPIDO</button>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-[10px] tracking-widest text-on-surface-variant mb-1 uppercase">Floral Oriental</p>
+<h3 class="font-headline-sm text-headline-sm mb-2 group-hover:italic transition-all">OUD TERCIOPELO</h3>
+<p class="font-body-md text-body-md text-primary">$295</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low relative overflow-hidden mb-6 flex items-center justify-center p-8">
+<img alt="Archivo No. 42" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhA1zWDi6JsH08zjMt03tVBIWjgT-ho6n2MOa_x1x9eTHz07-R_2q_LDOrKRQC2E6Tar1BSb36P2lwAMUMbbLoAdbyddH3o3cwxPW8RhDufCIgvCSDBFS7s5lZonXizh6HfsmQk2fq-xgJeH3QVQdPiUvFcR1Ei4VYiKiqfLADNIVklLUF6ankzZTmvTWJ48Hiq0Wt0jK-fRVnnTqy-JeobUy9WOpAqMP-VjP-NmK0ih7fiqddVaeOd2XdM8Kmk-sfQXz6f5tOTIlP"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] py-3 px-8 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">AÑADIR RÁPIDO</button>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-[10px] tracking-widest text-on-surface-variant mb-1 uppercase">Cítrico Aromático</p>
+<h3 class="font-headline-sm text-headline-sm mb-2 group-hover:italic transition-all">ARCHIVO NO. 42</h3>
+<p class="font-body-md text-body-md text-primary">$265</p>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low relative overflow-hidden mb-6 flex items-center justify-center p-8">
+<img alt="Bergamota de Plata" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7LkwovLia4ComZffJAfUwu3qUmIHr7ltilvJbUAkZDhb-MPOii-ztAfiPMiX13yzBPijlZeQZRGeKMopKwgDh6D373jnKGda6PPhmoIbHLu5T4Yl8s08BFd9qYoeCeetwEC-djqKh3oIRUQCL1LTARQ5iB302Eh200ikySftKzix8o_RRF_JN6z-qIF0W5pN790izRZGpvsSwsCu0O9HRBvjrZQ6kxrrCy4OZ1tUjUxUvRhzuopVuTLEA2q9y98bzqxT6Al8DB149"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] py-3 px-8 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">AÑADIR RÁPIDO</button>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-[10px] tracking-widest text-on-surface-variant mb-1 uppercase">Chypre Frutal</p>
+<h3 class="font-headline-sm text-headline-sm mb-2 group-hover:italic transition-all">BERGAMOTA DE PLATA</h3>
+<p class="font-body-md text-body-md text-primary">$270</p>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low relative overflow-hidden mb-6 flex items-center justify-center p-8">
+<img alt="Éter de Almizcle Blanco" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQn5l0Ww9pkMZyrXgjZ3vRWCgoaOWs_MxrUd-yrMMrAtBJFCePLQB0rq-6I0q-UTYKShOMNwBQa1LkvAvvXRPhM6H2Z9lwwrwnQYZeR_WGDOnnltpgVntj9rJj8uWp5Yh-F_BD5VCouWHixoRZEManj_M7hU5GMRPtfOX0WKVhsQ66p1U_dvOXTjfqjgItRgNGVejieDhuMap-_TYGDTvpkh1YyeCuEa_BSj9oA5rJ5p92_8fZXrVZFl2dNDpjEbWNZW3_3F7OGBUg"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] py-3 px-8 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">AÑADIR RÁPIDO</button>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-[10px] tracking-widest text-on-surface-variant mb-1 uppercase">Floral Suave</p>
+<h3 class="font-headline-sm text-headline-sm mb-2 group-hover:italic transition-all">ÉTER DE ALMIZCLE BLANCO</h3>
+<p class="font-body-md text-body-md text-primary">$240</p>
+</div>
+</div>
+<!-- Product 7 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low relative overflow-hidden mb-6 flex items-center justify-center p-8">
+<img alt="Abedul Negro" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjpS39Aze24c-at_JWXSdRaVybR2g8xstfZAbf_UORbzqCXCnORi9mCB6hrKdAwWtV69MsFiZVLjnaTNXmC3oe8i-KE2tJyc8W57JLgQawkeqx4tHDsO-KIkEIaH6cI4DfMF2lBjiymQWXdkTG26r9nX2-kxdAOTYnQtViqZdTWC7LLFeR6RElMdRF3o7Dgzg0CT2SYf1Jsk-rZ-4rEepRe27ZigpavPgzYjii0_HZwfdvgP2q9_uhI3GIanCOv875XuUyqqx3ummQ"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] py-3 px-8 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">AÑADIR RÁPIDO</button>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-[10px] tracking-widest text-on-surface-variant mb-1 uppercase">Maderas Secas</p>
+<h3 class="font-headline-sm text-headline-sm mb-2 group-hover:italic transition-all">ABEDUL NEGRO</h3>
+<p class="font-body-md text-body-md text-primary">$310</p>
+</div>
+</div>
+<!-- Product 8 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container-low relative overflow-hidden mb-6 flex items-center justify-center p-8">
+<img alt="Rosa de Medianoche" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaDP27uTLSCmR8_Bxx8EEV5Cih6o8n8ZljzWZoh3jWLgKvSe1HHrOYekNONdwH2t8P0FFAb4rBVmfMHA6P3GA3MMeYvD5A2jJA6wte5y1yLjq_Gn2f9OEislvg7RHaxC3s2fQ0-FECA3deDnHYXyTGrfa3wVLRX0iMBZbmuvhINgtmuHQ2Mah2S8qbhaeSiBHKfXNR2QgPIY2NqRCgCIMJQwk-O2BpilcXDFNLH-bpT9nfiAun2vxI3odWbGgYHufrMd4xA01Ld6Zl"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary font-label-caps text-[10px] py-3 px-8 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">AÑADIR RÁPIDO</button>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-[10px] tracking-widest text-on-surface-variant mb-1 uppercase">Floral de Cuero</p>
+<h3 class="font-headline-sm text-headline-sm mb-2 group-hover:italic transition-all">ROSA DE MEDIANOCHE</h3>
+<p class="font-body-md text-body-md text-primary">$345</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Editorial Block -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-8 italic">La Esencia del Tiempo</h2>
+<p class="font-body-lg text-body-lg mb-12 leading-relaxed">
+                Suscríbase a nuestro archivo privado para obtener acceso temprano a lanzamientos de lotes limitados, consultas de aromas a medida y narrativas sensoriales de nuestros Maestros Perfumistas.
+            </p>
+<form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-grow bg-transparent border-b border-primary py-3 px-0 font-label-caps text-[10px] focus:ring-0 focus:border-tertiary-container transition-all" placeholder="CORREO ELECTRÓNICO" type="email"/>
+<button class="bg-primary text-on-primary font-label-caps text-[10px] tracking-widest py-4 px-10 hover:bg-tertiary transition-all duration-300">SUSCRIBIRSE</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop flex flex-col items-center gap-16 border-t border-outline-variant bg-background">
+<div class="w-full flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-xs">
+<h1 class="font-display-xl text-headline-sm tracking-widest text-primary mb-6 uppercase">AETHERIA</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Definiendo el futuro del lujo sensorial a través de la precisión artesanal y la elegancia de archivo.
+            </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-24">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-[10px] text-primary">COLECCIÓN</span>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Fragancias</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Sets de Regalo</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Trío de Descubrimiento</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-[10px] text-primary">ATELIER</span>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">El Proceso</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">A Medida</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Clase Magistral</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-[10px] text-primary">SOPORTE</span>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Envío</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Devoluciones</a>
+<div class="flex flex-col gap-2 mt-4 pt-4 border-t border-outline-variant">
+<span class="font-label-caps text-[10px] text-primary uppercase">Aetheria Guatemala</span>
+<p class="font-body-md text-caption text-on-surface-variant">Avenida Reforma 12-01, Zona 10, Ciudad de Guatemala</p>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="tel:+50223000000">+502 2300 0000</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="mailto:guatemala@aetheria.com">guatemala@aetheria.com</a>
+</div></div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-[10px] text-primary">SOCIAL</span>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Pinterest</a>
+<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors" href="#">Vimeo</a>
+</div>
+</div>
+</div>
+<div class="w-full flex flex-col md:flex-row justify-between items-center pt-12 border-t border-outline-variant gap-6">
+<span class="font-label-caps text-[10px] text-on-surface-variant">© 2024 AETHERIA. TODOS LOS DERECHOS RESERVADOS.</span>
+<div class="flex gap-8">
+<a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">Términos</a>
+<a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">Accesibilidad</a>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interactions for smooth experience
+    document.querySelectorAll('button, a').forEach(el => {
+        el.addEventListener('mousedown', () => {
+            el.style.opacity = '0.7';
+        });
+        el.addEventListener('mouseup', () => {
+            el.style.opacity = '1';
+        });
+    });
+
+    // Filter active state toggle simulation
+    const filterButtons = document.querySelectorAll('.filter-item-active');
+</script>
+</body></html>

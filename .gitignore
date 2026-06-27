@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # zip archives
 *.zip
+
+# skip-git backup (was a broken submodule)
+stitch_aura_haute_parfumerie/--skip-git/

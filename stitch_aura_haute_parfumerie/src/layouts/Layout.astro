@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title: string;
   lang?: string;
@@ -36,7 +38,6 @@ const locale = lang === 'en' ? 'en_US' : 'es_ES';
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body>
     <slot />
